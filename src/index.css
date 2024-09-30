@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #FAFBFA;
+}
+
+.font-mont {
+    font-family: "Montserrat", sans-serif;
+}
+.font-robo{
+    font-family: "Roboto", sans-serif;
+}
