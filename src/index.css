@@ -12,6 +12,9 @@ body {
 .font-robo{
     font-family: "Roboto", sans-serif;
 }
+.font-pop{
+    font-family: "Poppins", sans-serif;
+}
 
 /* width */
 ::-webkit-scrollbar {

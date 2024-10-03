@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import UserInfo from './UserInfo';
 import Navigation from './Navigation';
 import Navbar from './Navbar';
+import Messages from './Messages';
+import Events from './Events';
 
 const Layout = () => {
     return (
@@ -10,7 +12,7 @@ const Layout = () => {
        <header className='p-5 flex items-center border-2 bg-white'>
                 <Navbar />
             </header>
-            <main className=' flex p-5'>
+            <main className=' flex p-5 justify-between'>
                 <aside className='m-3'>
                     <UserInfo />
                     <Navigation/>
@@ -18,6 +20,10 @@ const Layout = () => {
                 <section>
                     <Outlet/>
                 </section>
+                <aside className='m-3'>
+                    <Messages />
+                    <Events/>
+                </aside>
             </main>
         </>
     );
