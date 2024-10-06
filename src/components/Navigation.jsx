@@ -11,7 +11,7 @@ import data from '../utils/communityData'
 function Navigation() {
     return (
         <>
-            <div className='bg-white p-3 rounded-xl  border-2 font-robo flex flex-col gap-2 mt-5'>
+            <div className='bg-white p-3 rounded-xl  border-2 font-robo flex flex-col gap-2 mt-5 '>
                 <NavLink
                     to="/feed"
                     className={({ isActive }) => (isActive ? 'bg-bgBlue text-white' : 'text-black') + ' flex gap-3 p-2 rounded-lg'}

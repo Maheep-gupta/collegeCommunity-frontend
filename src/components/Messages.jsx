@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 const Messages = () => {
     return (
         <>
-            <div className='bg-white p-3 w-[255px] rounded-xl text-sm'>
+            <div className='bg-white p-3 w-[255px] rounded-xl text-sm border-2'>
                 <div className='flex justify-between pb-4'>
 
                     <div className='font-semibold font-pop text-[16px]'>Messages</div>
