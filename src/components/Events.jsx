@@ -6,9 +6,9 @@ import events from '../utils/event'
 const Events = () => {
     return (
         <>
-            <div className='bg-white p-3 w-[255px] rounded-xl text-sm border-2 mt-5'>
+            <div className='bg-white p-3 rounded-xl text-sm border-2 mt-5'>
                 <div className='flex justify-between pb-4 border-b-2'>
-                    <div className='font-semibold font-pop text-[16px]'>Events</div>
+                    <div className='font-semibold font-pop lg:text-sm'>Events</div>
                     <CiMenuKebab />
                 </div>
                 <div>

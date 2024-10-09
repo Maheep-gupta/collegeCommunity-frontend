@@ -33,7 +33,7 @@ const Messages = () => {
                         <span className='capitalize p-2 text-blue-600 cursor-pointer'>requests(4)</span>
                     </div>
                 </div>
-                <div className='py-4 '>
+                <div className='xl:py-4 lg:py-2 '>
                     {friends.map((ele) => <Friend friendName={ele.friendsName} avatar={avatar} onlineStatus={true}/>)}
                 </div>
                 <NavLink className="pl-3 font-pop text-gray-400 text-xs cursor-pointer" to="/friends">
