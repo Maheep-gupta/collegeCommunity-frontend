@@ -12,9 +12,9 @@ const Layout = () => {
             <header className='p-5 flex items-center border-2 bg-white'>
                 <Navbar />
             </header>
-            <main className=' main-grid p-5 justify-between relative'>
+            <main className=' grid xl:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] xl:p-5 justify-between relative lg:p-2'>
                 <aside className='m-3'>
-                    <div className="sticky top-5">
+                    <div className="sticky xl:top-5 lg:top-2">
 
                     <UserInfo />
                     <Navigation />
@@ -24,7 +24,7 @@ const Layout = () => {
                     <Outlet />
                 </section>
                 <aside className='m-3 relative '>
-                    <div className='sticky top-5 overflow-scroll hide-scrollbar h-screen'>
+                    <div className='sticky xl:top-5 lg:top-2 overflow-scroll hide-scrollbar h-screen'>
                         <div className="scroll">
 
                         <Messages />
