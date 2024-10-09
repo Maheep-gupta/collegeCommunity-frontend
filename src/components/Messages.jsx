@@ -42,6 +42,13 @@ const Messages = () => {
                         View All
                     </NavLink>
                 </div>
+                <div className='xl:py-4 lg:py-2 '>
+                    {friends.map((ele) => <Friend friendName={ele.friendsName} avatar={avatar} onlineStatus={true}/>)}
+                </div>
+                <NavLink className="pl-3 font-pop text-gray-400 text-xs cursor-pointer" to="/friends">
+                View All
+                </NavLink>
+
             </div>
         </>
     )

@@ -6,6 +6,7 @@ import Friends from './components/Friends'
 function App() {
   return (
 
+
     <Routes>
       <Route path="/" element={<Navigate to="/feed" />} />
       <Route path="/" element={<Layout />}>
