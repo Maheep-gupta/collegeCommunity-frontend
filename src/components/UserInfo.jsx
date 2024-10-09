@@ -4,7 +4,7 @@ import userData from '../utils/userDetails'
 function UserInfo() {
     return (
         <>
-            <div className='bg-white p-3 rounded-xl w-fit border-2'>
+            <div className='bg-white p-3 rounded-xl w-fit border-2 '>
                 <div className='bg-bgPink rounded-lg p-4 '>
                     <div className="about-user mb-7 ">
                         <div className='flex gap-2 items-center'>

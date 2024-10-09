@@ -1,12 +1,14 @@
 import React from 'react'
-import Navbar from './Navbar'
-import UserInfo from './UserInfo'
-import Navigation from './Navigation'
+import StorySection from './StorySection'
+import WhatOnYourMind from './WhatOnYourMind'
+import Posts from './Posts'
 function Feed() {
     return (
         <>
-            <main className=' flex p-5'>
-Feed Section
+            <main className=' p-5'>
+                <StorySection />
+                <WhatOnYourMind />
+                <Posts />
             </main>
         </>
     )

@@ -5,12 +5,19 @@
 body {
     background-color: #FAFBFA;
 }
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
 
 .font-mont {
     font-family: "Montserrat", sans-serif;
 }
 .font-robo{
     font-family: "Roboto", sans-serif;
+}
+.font-pop{
+    font-family: "Poppins", sans-serif;
 }
 
 /* width */
@@ -32,4 +39,22 @@ body {
 /* To handle height for vertical scrollbar, you can control the thumb height */
 ::-webkit-scrollbar-thumb {
     max-height: 200px; /* Minimum height of the thumb handle */
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar {
+    overflow-y: scroll; /* Ensure vertical scrolling is allowed */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar for Chrome, Safari and Opera */
+    background: transparent; /* Optional: make background transparent */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
