@@ -4,7 +4,7 @@ import notifications from '../utils/notification'
 
 const Notifications = ({isOpen}) => {
     return (
-        <div className={`absolute top-[87px] right-20 overflow-y-scroll z-50
+        <div className={`absolute top-[87px] right-20 overflow-y-scroll
         notifications-container p-4 bg-white shadow-md h-96 rounded-md transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
             {/* <div className="flex items-center justify-between">
                 <p tabindex="0" className="focus:outline-none text-2xl font-semibold leading-6 text-gray-800">Notifications</p>

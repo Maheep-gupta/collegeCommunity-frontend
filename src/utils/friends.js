@@ -1,29 +1,13 @@
 const friends =
     [
-    { friendsName: 'manish Raj',
-        imageUrl:""
-     },
-    { friendsName: 'Mohit Gop',
-        imageUrl:""
-     },
-    { friendsName: 'Izuku midoriya',
-        imageUrl:""
-     },
-    { friendsName: 'Light yagami',
-        imageUrl:""
-     },
-    { friendsName: 'kamado Tanjiro',
-        imageUrl:""
-     },
-    { friendsName: 'Tomaruo',
-        imageUrl:""
-     },
-    { friendsName: 'Rishabh Sharma',
-        imageUrl:""
-     },
-    { friendsName: 'parth Srivastava',
-        imageUrl:""
-     },
+    { friendsName: 'manish Raj' },
+    { friendsName: 'Mohit Gop' },
+    { friendsName: 'Isuku midoriya' },
+    { friendsName: 'Light yagami' },
+    { friendsName: 'kamado Tanjiro' },
+    { friendsName: 'Tomaruo' },
+    { friendsName: 'Rishabh Sharma' },
+    { friendsName: 'parth Srivastava' },
 ];
 
 

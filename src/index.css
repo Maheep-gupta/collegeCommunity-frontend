@@ -5,6 +5,7 @@
 body {
     background-color: #FAFBFA;
 }
+<<<<<<< HEAD
 .main-grid{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -12,6 +13,8 @@ body {
 .small-grid{
     display: flex;
 }
+=======
+>>>>>>> parent of 5f8fd94 (feed section completed)
 
 .font-mont {
     font-family: "Montserrat", sans-serif;
@@ -42,22 +45,4 @@ body {
 /* To handle height for vertical scrollbar, you can control the thumb height */
 ::-webkit-scrollbar-thumb {
     max-height: 200px; /* Minimum height of the thumb handle */
-}
-
-
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.hide-scrollbar {
-    overflow-y: scroll; /* Ensure vertical scrolling is allowed */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-    width: 0; /* Hide scrollbar for Chrome, Safari and Opera */
-    background: transparent; /* Optional: make background transparent */
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
 }
