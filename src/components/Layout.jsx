@@ -9,11 +9,11 @@ import Events from './Events';
 const Layout = () => {
     return (
         <>
-            <header className='p-5 flex items-center border-2 bg-white'>
+            <header className='xl:p-5 lg:p-2 flex items-center border-2 bg-white'>
                 <Navbar />
             </header>
-            <main className=' main-grid p-5 justify-between relative'>
-                <aside className='m-3'>
+            <main className='grid xl:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] xl:p-5 justify-between relative lg:p-2'>
+                <aside className='xl:m-3 lg:m-1'>
                     <div className="sticky top-5">
 
                     <UserInfo />
@@ -23,7 +23,7 @@ const Layout = () => {
                 <section>
                     <Outlet />
                 </section>
-                <aside className='m-3 relative '>
+                <aside className='xl:m-3 lg:m-1 relative '>
                     <div className='sticky top-5 overflow-scroll hide-scrollbar h-screen'>
                         <div className="scroll">
 

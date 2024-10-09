@@ -9,6 +9,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
 }
+.small-grid{
+    display: flex;
+}
 
 .font-mont {
     font-family: "Montserrat", sans-serif;
