@@ -4,9 +4,15 @@ import userData from '../utils/userDetails'
 function UserInfo() {
     return (
         <>
+<<<<<<< HEAD
             <div className='bg-white xl:p-3 lg:p-1 rounded-xl w-full border-2 '>
                 <div className='bg-bgPink rounded-lg xl:p-4 lg:p-2 '>
                     <div className="about-user xl:mb-7 lg:mb-3 ">
+=======
+            <div className='bg-white p-3 rounded-xl w-fit border-2'>
+                <div className='bg-bgPink rounded-lg p-4 '>
+                    <div className="about-user mb-7 ">
+>>>>>>> parent of 5f8fd94 (feed section completed)
                         <div className='flex gap-2 items-center'>
                             <div className='h-10 w-10 rounded-full'>
                                 <img className='rounded-full' src={userData.profileUrl} alt="" />
