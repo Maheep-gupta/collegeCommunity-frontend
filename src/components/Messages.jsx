@@ -9,9 +9,9 @@ import { NavLink } from 'react-router-dom'
 const Messages = () => {
     return (
         <>
-            <div className='bg-white p-3 rounded-xl text-sm border-2'>
+            <div className='bg-white xl:p-3 lg:p-1 rounded-xl text-sm border-2 hide-scrollbar'>
 
-                <div className='bg-white p-3 w-[255px] rounded-xl text-sm'>
+                <div className='bg-white xl:p-3 lg:p-1 rounded-xl text-sm'>
                     <div className='flex justify-between pb-4'>
 
                         <div className='font-semibold font-pop text-[16px]'>Messages</div>
@@ -42,13 +42,6 @@ const Messages = () => {
                         View All
                     </NavLink>
                 </div>
-                <div className='xl:py-4 lg:py-2 '>
-                    {friends.map((ele) => <Friend friendName={ele.friendsName} avatar={avatar} onlineStatus={true}/>)}
-                </div>
-                <NavLink className="pl-3 font-pop text-gray-400 text-xs cursor-pointer" to="/friends">
-                View All
-                </NavLink>
-
             </div>
         </>
     )
