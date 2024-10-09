@@ -6,7 +6,7 @@ import { RiShareForwardLine } from 'react-icons/ri'
 import { GoBookmark } from 'react-icons/go'
 function FeedPost() {
     return (
-        <div className='bg-white p-5 mt-5 rounded-xl border-2'>
+        <div className='bg-white p-5 xl:mt-5 lg:mt-2 rounded-xl border-2'>
             <div className="userInfo font-pop">
                 <div className='flex gap-2 items-center'>
                     <div className='h-10 w-10 rounded-full'>
@@ -23,7 +23,7 @@ function FeedPost() {
 
                 </div>
             </div>
-            <div className="postArea py-5  rounded-xl">
+            <div className="postArea xl:py-5 lg:py-2  rounded-xl">
                 <img className='rounded-xl' src={post1} alt="post" />
             </div>
             <div className="post-footer p-3 flex justify-between items-center border-t-2">

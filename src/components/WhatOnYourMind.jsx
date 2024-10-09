@@ -10,7 +10,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 function WhatOnYourMind() {
   return (
     <>
-      <div className='bg-white p-3 mt-5 rounded-xl border-2'>
+      <div className='bg-white xl:p-3 lg:p-2 xl:mt-5 lg:mt-2 rounded-xl border-2'>
         <div className='flex items-center border-b-2 gap-2 p-2'>
 
           <div className='h-10 w-10 rounded-full'>
@@ -34,28 +34,28 @@ function WhatOnYourMind() {
         <div className="options flex gap-4 p-3">
           <div className="image flex gap-2 items-center">
             <CiImageOn className='h-6 w-6 text-bgBlue' />
-            <span className='capitalize'>Image/video</span>
+            <span className='capitalize lg:text-sm'>Image/video</span>
           </div>
           <div className="attachment flex gap-2 items-center">
             <CgLink className='h-6 w-6 text-orange-400' />
-            <span className='capitalize'>Attachment</span>
+            <span className='capitalize lg:text-sm'>Attachment</span>
           </div>
           <div className="live flex gap-2 items-center">
             <RiLiveLine className='h- w-6 text-red-500' />
-            <span className='capitalize'>Live</span>
+            <span className='capitalize lg:text-sm'>Live</span>
           </div>
           <div className="hashtag flex gap-2 items-center">
             <CiHashtag className='h-6 w-6 text-green-500' />
-            <span className='capitalize'>Hashtag</span>
+            <span className='capitalize lg:text-sm'>Hashtag</span>
           </div>
           <div className="mention flex gap-2 items-center">
             <GoMention className='h-5 w-5'/>
-            <span className='capitalize'>mention</span>
+            <span className='capitalize lg:text-sm'>mention</span>
           </div>
           </div>
           <div className="public capitalize flex items-center gap-1">
-            <span>public</span> 
-            <IoIosArrowDown className='h-4 w-4 font-medium'/>
+            <span className='capitalize text-sm'>public</span> 
+            <IoIosArrowDown className='xl:h-4 xl:w-4 lg:w-3 lg:h-3 font-medium'/>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const DisplayCommunityCard = ({communityName,avatar}) => {
                 <div  className='h-6 w-6'>
                     <img className='h-6 w-g rounded-md' src={avatar} alt="community avatar" />
                 </div>
-                <div className='font-robo font-medium'>
+                <div className='font-robo font-medium lg:text-sm'>
                     {communityName}
                 </div>
             </div>
