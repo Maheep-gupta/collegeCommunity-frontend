@@ -4,7 +4,7 @@ import UserInfo from './UserInfo';
 import Navigation from './Navigation';
 import Navbar from './Navbar';
 import Messages from './Messages';
-import Events from './Events';
+import EventsLayoutSection from './EventsLayoutSection';
 
 const Layout = () => {
     return (
@@ -28,7 +28,7 @@ const Layout = () => {
                         <div className="scroll">
 
                         <Messages />
-                        <Events />
+                        <EventsLayoutSection />
                         </div>
                     </div>
                 </aside>

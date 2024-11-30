@@ -3,7 +3,7 @@ import { CiMenuKebab } from 'react-icons/ci'
 import InlineEventCard from './InlineEventCard'
 import events from '../utils/event'
 
-const Events = () => {
+const EventsLayoutSection = () => {
     return (
         <>
 
@@ -24,4 +24,4 @@ const Events = () => {
     )
 }
 
-export default Events
+export default EventsLayoutSection
