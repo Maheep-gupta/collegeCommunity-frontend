@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 const Messages = () => {
     return (
         <>
-            <div className='bg-white xl:p-3 lg:p-1 rounded-xl text-sm border-2 hide-scrollbar'>
+            <div className='bg-white xl:p-0 lg:p-1 rounded-xl text-lg border-2 hide-scrollbar'>
 
                 <div className='bg-white xl:p-3 lg:p-1 rounded-xl text-sm'>
                     <div className='flex justify-between pb-4'>
@@ -27,7 +27,7 @@ const Messages = () => {
                         <IoFilter className='h-5 w-5 text-[#808080]' />
                     </div>
                     <div className="msg-nav flex justify-between border-b-2 items-center ">
-                        <div className='flex justify-between lg:text-xs'>
+                        <div className='flex justify-between lg:text-sm'>
                             <span className='capitalize font-semibold p-2 border-b-2 border-black cursor-pointer'>primary</span>
                             <span className='capitalize p-2 cursor-pointer'>General</span>
                         </div>
@@ -35,10 +35,10 @@ const Messages = () => {
                             <span className='capitalize p-2 text-blue-600 cursor-pointer'>requests(4)</span>
                         </div>
                     </div>
-                    <div className='py-4 '>
+                    <div className='py-4'>
                         {friends.map((ele) => <Friend friendName={ele.friendsName} avatar={avatar} onlineStatus={true} />)}
                     </div>
-                    <NavLink className="pl-3 font-pop text-gray-400 text-xs cursor-pointer" to="/friends">
+                    <NavLink className="pl-3 font-pop text-gray-400 text-sm cursor-pointer" to="/friends">
                         View All
                     </NavLink>
                 </div>

@@ -7,7 +7,7 @@ import friends from '../utils/friends';
 function StorySection() {
     return (
         <div className=' overflow-auto border-2 rounded-xl bg-white'> {/* Added padding to the container */}
-            <div className=' flex gap-2 xl:pt-5 lg:pt-2  pb-7   justify-between rounded-lg overflow-x-auto hide-scrollbar whitespace-nowrap'>
+            <div className=' flex gap-2 xl:pt-5 lg:pt-2  pb-7 pl-4   justify-between rounded-lg overflow-x-auto hide-scrollbar whitespace-nowrap'>
                 <div className='flex gap-5'>
                     <div className='your-story flex-shrink-0 w-24 h-24'>
                         <div className='border-2 p-1 rounded-full relative'>

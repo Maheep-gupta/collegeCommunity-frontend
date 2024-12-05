@@ -1,13 +1,13 @@
 const friends =
     [
-    { friendsName: 'manish Raj' },
+    { friendsName: 'Manish Raj' },
     { friendsName: 'Mohit Gop' },
     { friendsName: 'Isuku midoriya' },
     { friendsName: 'Light yagami' },
     { friendsName: 'kamado Tanjiro' },
     { friendsName: 'Tomaruo' },
     { friendsName: 'Rishabh Sharma' },
-    { friendsName: 'parth Srivastava' },
+    { friendsName: 'Parth Srivastava' },
 ];
 
 
