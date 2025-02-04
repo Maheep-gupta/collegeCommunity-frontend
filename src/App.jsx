@@ -1,10 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Feed from "./components/Feed";
-import Friends from './components/Friends'
 import Courses from "./components/courses/courses";
-import Friends from './components/chat/ChatSection'
 import EventsSection from "./components/Events/EventsSection";
+import ChatSection from "./components/chat/ChatSection";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
 
         <Route path="/courses" element={<Courses />} />
 
-      <Route path="/friends" element={<Friends />} />
+      <Route path="/friends" element={<ChatSection />} />
 
     </Routes>
   );

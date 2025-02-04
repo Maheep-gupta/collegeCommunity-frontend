@@ -5,7 +5,7 @@ import Friend from '../Friend'
 import friends from '../../utils/friends'
 import avatar from '../../assets/avatarforFriends.avif'
 
-const Friends = () => {
+const ChatSection = () => {
     return (
         <main className=' '>
             <div class="flex h-screen antialiased text-gray-800">
@@ -14,6 +14,7 @@ const Friends = () => {
                         <div class="flex flex-row items-center justify- h-12 w-full">
                             <div
                                 class="flex items-center justify-center rounded-2xl text-indigo-700 bg-indigo-100 h-10 w-10"
+                            onClick={() => window.history.back()}
                             >
                                 <IoArrowBack size={22} className='h-8' />
                             </div>
@@ -53,4 +54,4 @@ const Friends = () => {
     )
 }
 
-export default Friends
+export default ChatSection
