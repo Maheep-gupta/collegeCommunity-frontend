@@ -2,7 +2,7 @@ import React from 'react';
 
 function EventCard({ date, month, day, time, title, location, attendees, image }) {
   return (
-    <div className="bg-white font-mont  shadow-md relative rounded-2xl overflow-hidden min-w-96 p-5">
+    <div className="bg-white font-mont shadow-md relative rounded-2xl overflow-hidden min-w-max p-5">
       <div
         className="h-60 bg-cover bg-center rounded-xl"
         style={{ backgroundImage: `url(${image})` }}
