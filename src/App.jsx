@@ -1,10 +1,11 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Feed from "./components/Feed";
-import Friends from './components/Friends'
 import Courses from "./components/courses/courses";
-import Friends from './components/chat/ChatSection'
 import EventsSection from "./components/Events/EventsSection";
+import ChatSection from "./components/chat/ChatSection";
+import ChatWithAI from "./components/C-AI/ChatWithAI";
+import Community from "./components/community/Community";
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
         <Route path="feed" element={<Feed />} />
         <Route path="events" element={<EventsSection />} />
 
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/community" element={<Community />} />
         {/* You can add more routes here */}
       </Route>
 
-        <Route path="/courses" element={<Courses />} />
 
-      <Route path="/friends" element={<Friends />} />
+      <Route path="/friends" element={<ChatSection />} />
+      <Route path="/cai" element={<ChatWithAI />} />
 
     </Routes>
   );
