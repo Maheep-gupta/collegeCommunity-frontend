@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EventCard from './EventCard';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
+import SmallEventCard from './EventCardForFilteration';
 
 function EventsSection() {
   const cardData = [
@@ -77,7 +78,7 @@ function EventsSection() {
   return (
     <section className=' p-5 pt-0 '>
       <div className='flex justify-between mb-3'>
-        <span className='text-2xl font-mont font-semibold'>Trending Events</span>
+        <span className='text-3xl font-mont font-semibold'>Trending Events</span>
         <div className='flex gap-2 items-center'>
           <div title='Back' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
             <MdNavigateBefore className='h-5 w-5' />
@@ -92,9 +93,9 @@ function EventsSection() {
         ))}
       </div>
 
-      <div className='mb-2 mt-5'>
-        <span className='text-2xl font-mont font-semibold '>Popular Events</span>
-        <div className='flex justify-between mt-3 items-center'>
+      <div className='mb-2 mt-10'>
+        <span className='text-3xl font-mont font-semibold '>Popular Events</span>
+        <div className='flex justify-between mt-5 items-center'>
 
           <div className='flex gap-x-2 items-center  '>
             <span className={`border border-bgBlue capitalize  rounded-full px-3 py-1 text-center ${filteredOptionsState === 'all' ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState('all')}>
@@ -130,9 +131,18 @@ function EventsSection() {
           </div>
         </div> */}
       </div>
-      <div className="flex justify-between flex-wrap pb-4 gap-6 ">
+      <div className="grid grid-cols-3 w-full justify-evenly gap-2">
         {cardData.map((data, index) => (
-          <EventCard key={index} {...data} />
+          <SmallEventCard key={index} {...data} />
+        ))}
+        {cardData.map((data, index) => (
+          <SmallEventCard key={index} {...data} />
+        ))}
+        {cardData.map((data, index) => (
+          <SmallEventCard key={index} {...data} />
+        ))}
+        {cardData.map((data, index) => (
+          <SmallEventCard key={index} {...data} />
         ))}
       </div>
     </section >
