@@ -3,13 +3,17 @@ import LoggedUserNav from './LoggedUserNav'
 import logo from './../assets/cc-logo.png'
 import { VscBell, VscBellDot } from 'react-icons/vsc'
 import NotificationDrawer from './NotificationDrawer'
-function Navbar() {
+import { GoBookmark } from 'react-icons/go'
+import { motion } from "motion/react"
+function Navbar({ isCourses }) {
+    const path = window.location.pathname;
+
     const [newNotification, setNewNotification] = useState(false)
     const [bellState, setBellState] = useState(false)
 
     const handleNotificationDrawer = () => {
         setNewNotification(!newNotification)
-        
+
     }
     return (
         <>
@@ -29,22 +33,31 @@ function Navbar() {
                         </span>
                     </div>
                 </div>
-                <div className='flex gap-5 pr-10'>
-                    <div className='bg-bgPink h-10 w-10 rounded-lg flex justify-center items-center' onClick={handleNotificationDrawer}>
+                <div className='flex gap-2 pr-10 items-center '>
+                    {
+                        isCourses ?
+                            <motion.div className='flex gap-2 items-center'>
+                                <span className='text-sm font-mont font-semibold w-24 hover:cursor-pointer'>My learning</span>
+                                <div title='Favorites' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
+                                    <GoBookmark className='h-5 w-5' />
+                                </div>
+                            </motion.div> : null
+                    }
+                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={handleNotificationDrawer}>
 
-                        
+
                         {bellState ?
                             <VscBellDot className='h-5 w-5' /> : <VscBell className='h-5 w-5' />}
+
                     </div>
-                    {/* <div className='bg-bgPink h-10 w-10 rounded-lg flex justify-center items-center'>
-                    <GoBookmark className='h-5 w-5' />
-                    </div> */}
+
+
                 </div>
-                <div className='w-60'>
+                <div className=''>
                     <LoggedUserNav />
                 </div>
             </nav>
-            <NotificationDrawer isOpen={newNotification}/>
+            <NotificationDrawer isOpen={newNotification} />
         </>
     )
 }

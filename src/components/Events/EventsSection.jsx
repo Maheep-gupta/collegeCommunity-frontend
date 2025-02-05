@@ -71,7 +71,7 @@ function EventsSection() {
   ];
 
   return (
-    <div className="flex justify-center flex-wrap p-8 bg-gray-100 min-h-screen">
+    <div className="flex justify-center flex-wrap p-8 ">
       {cardData.map((data, index) => (
         <EventCard key={index} {...data} />
       ))}

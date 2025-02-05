@@ -17,15 +17,14 @@ function LoggedUserNav() {
         <div className='h-10 w-10 rounded-full'>
           <img className='rounded-full' src={userData.profileUrl} alt={userData.name} />
         </div>
-        <div className='font-[500] font-mont text-md flex items-center'>
-          <span>{userData.name}</span>
-          <span className='h-4 w-4 inline pl-2'>
+        {/* <div className='flex items-center '>
+          <span className='h-4 w-4 inline pl-2 '>
             {openProfilemenu ?
               <IoIosArrowUp />:
               <IoIosArrowDown /> 
               }
           </span>
-        </div>
+        </div> */}
       </div>
 
       <ProfileMenu isOpen={openProfilemenu} />

@@ -5,7 +5,7 @@ import Posts from './FeedPost'
 function Feed() {
     return (
         <>
-            <main className=' p-5'>
+            <main className=' p-5 pt-0'>
                 <StorySection />
                 <WhatOnYourMind />
                 <Posts />
