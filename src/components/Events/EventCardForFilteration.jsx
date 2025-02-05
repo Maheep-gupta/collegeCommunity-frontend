@@ -8,7 +8,7 @@ function SmallEventCard({ date, month, day, time, title, location, attendees, im
         style={{ backgroundImage: `url(${image})` }}
       ></div>
 
-      {/*  date card */}
+          {/*  date card */}
       <div class="absolute p-2 rounded-lg font-mont bg-white text-center right-6 top-28 ">
         <div class="text-black text-sm">
           {month}
