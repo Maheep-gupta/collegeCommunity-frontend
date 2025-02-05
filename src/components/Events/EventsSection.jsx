@@ -123,15 +123,8 @@ function EventsSection() {
             </select>
           </div>
         </div>
-        {/* <div className='flex gap-2 items-center'>
-          <div title='Favorites' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
-            <MdNavigateBefore className='h-5 w-5' />
-          </div><div title='Favorites' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
-            <MdNavigateNext className='h-5 w-5' />
-          </div>
-        </div> */}
       </div>
-      <div className="grid grid-cols-3 w-full justify-evenly gap-2">
+      <div className="grid grid-cols-3 w-full justify-evenly gap-5">
         {cardData.map((data, index) => (
           <SmallEventCard key={index} {...data} />
         ))}
