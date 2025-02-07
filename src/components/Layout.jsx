@@ -26,7 +26,7 @@ const Layout = () => {
       
       <main
         className={`grid xl:p-5 lg:p-2 justify-between relative ${
-          pathVisited
+          currentPath.pathname === "/community" || pathVisited
             ? "grid-cols-[minmax(0,1fr)_minmax(0,4fr)]" // First aside fixed width, rest taken by middle section
             : "grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)]" // Normal layout
         }`}
