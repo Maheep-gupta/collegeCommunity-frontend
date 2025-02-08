@@ -24,7 +24,7 @@ function CoursesCard({courseName,courseImage,courseRatingCount,authorName,studen
                     </span>
                 </button> */}
             </div>
-            <div class="px-3 pt-2">
+            <div class="px-3 pt-2 pb-2">
                 <div class="flex flex-col gap-y-1 justify-start mb-1">
                     <h5 class="block font-mont text-sm antialiased font-bold leading-snug text-blue-gray-900">
                         Java & Python Programming Mastery: Learn ...
@@ -75,13 +75,13 @@ function CoursesCard({courseName,courseImage,courseRatingCount,authorName,studen
                 </p> */}
 
             </div>
-            <div class="p-3 px-4">
+            {/* <div class="p-3 px-4">
                 <button
                     class="block w-full select-none rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:bg-gray-800 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     type="button">
                     Start learning
                 </button>
-            </div>
+            </div> */}
         </button>
     )
 }

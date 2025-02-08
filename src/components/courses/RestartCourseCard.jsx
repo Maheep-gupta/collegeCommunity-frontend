@@ -4,7 +4,7 @@ import thumbnail from '../../assets/thumbnail.jpg'
 
 function RestartCourseCard({ courseName,courseImage,lectureName,lectureTime,lectureProgress }) {
     return (
-        <button className="h-44 min-w-max border bg-clip-border bg-white text-left flex p-3 rounded-2xl hover:bg-bgPink hover:scale-105">
+        <button className="h-44 min-w-max border bg-clip-border bg-white text-left flex p-3 rounded-2xl hover:scale-105">
             <div className=' h-full w-32 relative rounded-xl '>
                 <img src={thumbnail} alt="" className='h-full rounded-xl object-cover' />
                 <div className='absolute rounded-xl  h-full w-full bg-black opacity-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>

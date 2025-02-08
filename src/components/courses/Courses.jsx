@@ -84,7 +84,7 @@ function Courses() {
       {/* Current Progress */}
       <div className='w-full mt-5'>
         <h1 className='text-2xl font-semibold font-mont my-2'>Where you left</h1>
-        <div className='flex w-full overflow-scroll hide-scrollbar gap-4 py-4'>
+        <div className='flex w-full overflow-scroll hide-scrollbar gap-4 py-4 px-3'>
           <RestartCourseCard />
           <RestartCourseCard />
           <RestartCourseCard />
