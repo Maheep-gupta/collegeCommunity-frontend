@@ -3,6 +3,7 @@ import courseCategory from '../../utils/courseCategory'
 import { FaSortUp } from 'react-icons/fa'
 import { motion } from 'motion/react'
 import RestartCourseCard from './RestartCourseCard'
+import CoursesCard from './CoursesCard'
 function Courses() {
 
   const [CategoryChoosen, setCategoryChoosen] = useState(null)
@@ -13,7 +14,26 @@ function Courses() {
   const date = new Date();
   const currTime = date.getHours();
   let salutation = currTime < 12 ? "good morning 👋" : currTime == 12 ? "good noon 👋" : "good Evening 👋"
+  const [filteredOptionsState, setFilteredOptionsState] = useState("all")
 
+  const recommendedCategory = [
+    {
+      name: "Development",
+      subCategories: ["Web Development", "Mobile Development", "Game Development", "Database Development", "Software Development"]
+    }, {
+      name: "Design",
+      subCategories: ["Graphic Design", "Web Design", "UX/UI Design", "Interior Design", "Fashion Design"]
+    }, {
+      name: "IT & Software",
+      subCategories: ["IT Certification", "Network & Security", "Hardware", "Operating Systems", "Other IT & Software"]
+    }, {
+      name: "Personal Development",
+      subCategories: ["Personal Transformation", "Productivity", "Leadership", "Personal Finance", "Career Development"]
+    }, {
+      name: "Academics",
+      subCategories: ["Engineering", "Humanities", "Math", "Science", "Online Education"]
+    }
+  ]
 
 
   return (
@@ -51,29 +71,89 @@ function Courses() {
         }
       </div>
       {/* Salutation */}
-      <div className='flex items-center '>
+      <div className='flex items-center mt-5'>
         <div className='border rounded-full border-gray-500 p-[2px] h-16 w-16'>
           <img src={"https://ui-avatars.com/api/?name=Midoriya+DeKu&bold=true&background=random&uppercase=false"} className='rounded-full h-full w-full' />
         </div>
-        <div className='flex flex-col items-start pl-2 mt-5'>
+        <div className='flex flex-col items-start pl-2'>
           <span className='text-lg  text-black font-light capitalize'>{salutation}</span>
           <span className='text-xl font-normal text-black capitalize'>{username}</span>
         </div>
       </div>
-      {/* Recommended for you */}
-      <div>
-        <h1 className='text-2xl font-semibold font-mont mt-2'>Recommended for you</h1>
-      </div>
+
       {/* Current Progress */}
-      <div className='w-full'>
+      <div className='w-full mt-5'>
         <h1 className='text-2xl font-semibold font-mont my-2'>Where you left</h1>
-        <div className='flex w-full overflow-scroll hide-scrollbar gap-4'>
-        <RestartCourseCard />
-        <RestartCourseCard />
-        <RestartCourseCard />
-        <RestartCourseCard />
-        <RestartCourseCard />
+        <div className='flex w-full overflow-scroll hide-scrollbar gap-4 py-4'>
+          <RestartCourseCard />
+          <RestartCourseCard />
+          <RestartCourseCard />
         </div>
+        {/* Recommended for you
+        <div className='mt-5'>
+          <h1 className='text-2xl font-semibold font-mont mt-2'>Recommended for you</h1>
+          <div className='grid grid-cols-4 w-full justify-evenly gap-5 mt-5'>
+            <CoursesCard />
+            <CoursesCard />
+            <CoursesCard />
+            <CoursesCard />
+          </div>
+        </div>
+        <div className='mt-5'>
+          <h1 className='text-2xl font-semibold font-mont mt-2'>Academics</h1>
+          <div className='grid grid-cols-4 w-full justify-evenly gap-5 mt-5'>
+            <CoursesCard />
+            <CoursesCard />
+            <CoursesCard />
+            <CoursesCard />
+          </div>
+        </div> */}
+        <div className='mb-2 mt-10'>
+          <span className='text-3xl font-mont font-semibold '>Recommended for you</span>
+          <div className='flex justify-between mt-5 items-center'>
+
+            <div className='flex flex-wrap gap-x-2 items-center  '>
+              <span className={`border border-bgBlue capitalize  rounded-full px-3 py-1 text-center ${filteredOptionsState === 'all' ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState('all')}>
+                All
+              </span>
+              {
+                recommendedCategory.map((option, index) => {
+
+                  return (
+                    <span key={index} className={`border border-bgBlue capitalize  rounded-full px-2 py-1 text-center ${filteredOptionsState === option.name ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState(option.name)}>
+                      {option.name}
+                    </span>
+                  )
+                })
+              }
+
+            </div>
+
+            <div>
+              <span className='text-xs font-mont font-semibold text-gray-500'>Sort by:</span>
+              <select name="sorting" id="" className='capitalize outline-none t text-gray-500 font-semibold text-sm font-mont '>
+                <option value="most-recent" className='capitalize'>most recent</option>
+                <option value="most-recent" className='capitalize'>highest rating</option>
+                <option value="most-recent" className='capitalize'>A-Z</option>
+                <option value="most-recent" className='capitalize'>Z-A</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-5 w-full justify-evenly gap-5 mt-5">
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+        </div>
+
+
 
       </div>
     </div>
