@@ -10,7 +10,7 @@ function EventsSection() {
       month: 'AUG',
       day: 'THU',
       time: '1:45 AM',
-      title: 'Planning Masterclass',
+      title: 'Coding Competition',
       location: '28 Royal St, Vienna, New Jersey',
       attendees: [
         'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
@@ -27,7 +27,7 @@ function EventsSection() {
       month: 'AUG',
       day: 'WED',
       time: '12:15 PM',
-      title: 'Monumental Event Planning',
+      title: 'Diwali celebration',
       location: '62 East St, Geneva, Delaware',
       attendees: [
         'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
@@ -43,7 +43,7 @@ function EventsSection() {
       month: 'AUG',
       day: 'WED',
       time: '12:15 PM',
-      title: 'Monumental Event Planning',
+      title: 'Chess Competition',
       location: '62 East St, Geneva, Delaware',
       attendees: [
         'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
@@ -59,7 +59,7 @@ function EventsSection() {
       month: 'AUG',
       day: 'THU',
       time: '12:15 PM',
-      title: 'Monumental Event Planning',
+      title: 'Farewell party',
       location: '62 East St, Geneva, Delaware',
       attendees: [
         'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
@@ -87,7 +87,7 @@ function EventsSection() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between overflow-scroll hide-scrollbar pb-4 gap-6 ">
+      <div className="flex justify-between overflow-scroll p-5 hide-scrollbar pb-4 gap-6 ">
         {cardData.map((data, index) => (
           <EventCard key={index} {...data} />
         ))}
@@ -124,7 +124,7 @@ function EventsSection() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 w-full justify-evenly gap-5">
+      <div className="grid grid-cols-4 w-full justify-evenly gap-5">
         {cardData.map((data, index) => (
           <SmallEventCard key={index} {...data} />
         ))}

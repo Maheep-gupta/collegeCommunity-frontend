@@ -40,7 +40,7 @@ function Courses() {
     <div className='pl-5 w-full'>
       {/* Category section */}
       <div>
-        <div className='flex justify-between items-center bg-white  rounded-lg  '>
+        <div className='flex justify-between items-center shadow-lg bg-white border rounded-lg  '>
           {
             courseCategory.map((category, index) =>
               <motion.button key={index} className='text-sm flex h-16 px-3 flex-col justify-center items-center hover:text-bgBlue font-pop hover:bg-[#a4c9f5] rounded p-0' onMouseEnter={() => setCategoryChoosen(category.name)} onMouseLeave={() => setCategoryChoosen(null)} >{category.name}
@@ -61,7 +61,7 @@ function Courses() {
                   opacity: { ease: "linear" }
                 }
               }}
-              className='flex justify-evenly items-center bg-black p-2 rounded-lg' onMouseEnter={() => setCategoryChoosen(CategoryChoosen)} onMouseLeave={() => setCategoryChoosen(null)}>
+              className='flex justify-evenly shadow-lg shadow-white items-center bg-black p-2 rounded-lg' onMouseEnter={() => setCategoryChoosen(CategoryChoosen)} onMouseLeave={() => setCategoryChoosen(null)}>
               {
 
                 CategoryChoosen && courseCategory.find(category => category.name === CategoryChoosen).subCategories.map((subCategory, index) =>
@@ -84,7 +84,7 @@ function Courses() {
       {/* Current Progress */}
       <div className='w-full mt-5'>
         <h1 className='text-2xl font-semibold font-mont my-2'>Where you left</h1>
-        <div className='flex w-full overflow-scroll hide-scrollbar gap-4 py-4'>
+        <div className='flex w-full overflow-scroll hide-scrollbar gap-4 py-4 px-3'>
           <RestartCourseCard />
           <RestartCourseCard />
           <RestartCourseCard />

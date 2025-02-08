@@ -2,14 +2,14 @@ import React from 'react';
 
 function EventCard({ date, month, day, time, title, location, attendees, image }) {
   return (
-    <div className="bg-white font-mont shadow-md relative rounded-2xl overflow-hidden min-w-max p-5">
+    <div className="bg-white hover:scale-105 font-mont shadow-md relative rounded-2xl overflow-hidden min-w-72 p-3">
       <div
-        className="h-60 bg-cover bg-center rounded-xl"
+        className="h-48 bg-cover bg-center rounded-xl"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
 
       {/*  date card */}
-      <div class="absolute p-3 rounded-lg font-mont bg-white text-center right-8 top-56 ">
+      <div class="absolute p-3 rounded-lg font-mont bg-white text-center right-8 top-40 ">
         <div class="text-black text-lg">
           {month}
         </div>
@@ -25,7 +25,7 @@ function EventCard({ date, month, day, time, title, location, attendees, image }
           <span>{day}</span>
           <span>{time}</span>
         </div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">{title}</h3>
+        <h3 className="text- font-semibold text-gray-800 mb-1">{title}</h3>
         <p className="text-gray-600 text-sm mb-4">Location - {location}</p>
 
         <div className="flex -space-x-2 ">
