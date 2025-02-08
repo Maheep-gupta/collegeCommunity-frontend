@@ -68,7 +68,7 @@ function CoursesCard({courseName,courseImage,courseRatingCount,authorName,studen
                         </span>
                         <span className='text-sm font-light'>(12)</span>
                     </p>
-                    <span className='text-sm font-light'>Certificate gauranteed </span>
+                    <span className='text-sm font-light'>Certificate guaranteed </span>
                 </div>
                 {/* <p class="block text-sm font-sans antialiased font-light leading-relaxed text-gray-700">
                     Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient  ....
