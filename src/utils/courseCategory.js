@@ -24,10 +24,6 @@ const courseCategory = [
       subCategories: ["Personal Transformation", "Productivity", "Leadership", "Personal Finance", "Career Development"]
     },
     {
-      name: "Health & Fitness",
-      subCategories: ["Fitness", "General Health", "Sports", "Nutrition", "Yoga"]
-    },
-    {
       name: "Music",
       subCategories: ["Instruments", "Production", "Music Fundamentals", "Vocal", "Music Techniques"]
     },
