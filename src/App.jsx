@@ -6,6 +6,7 @@ import EventsSection from "./components/Events/EventsSection";
 import ChatSection from "./components/chat/ChatSection";
 import ChatWithAI from "./components/C-AI/ChatWithAI";
 import Community from "./components/community/Community";
+import CommunityDetail from "./components/community/CommunityDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="/courses" element={<Courses />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/community/:id" element={<CommunityDetail />} />
         {/* You can add more routes here */}
       </Route>
 
@@ -31,3 +33,6 @@ function App() {
 }
 
 export default App;
+
+// { id: 1, name: "Web Development", description: "Discuss frontend & backend technologies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
+// { id: 2, name: "App Development", description: "Share knowledge on mobile app development.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?w=400" },
