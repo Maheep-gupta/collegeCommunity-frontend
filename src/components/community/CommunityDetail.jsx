@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 const communities = [
   { id: 1, name: "Web Development", description: "Discuss frontend & backend technologies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
   { id: 2, name: "App Development", description: "Share knowledge on mobile app development.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?w=400" },
-  { id: 3, name: "Football", description: "Talk about matches, players, and strategies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
+  { id: 3, name: "Football", description: "Talk about the matches, players, and strategies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
   { id: 4, name: "Cricket", description: "Discuss cricket leagues, teams, and tips.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?w=400" },
   { id: 5, name: "Java", description: "Discuss Java questions, teams, and tips.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
 ];
