@@ -7,6 +7,8 @@ import ChatSection from "./components/chat/ChatSection";
 import ChatWithAI from "./components/C-AI/ChatWithAI";
 import Community from "./components/community/Community";
 import CommunityDetail from "./components/community/CommunityDetail";
+import SearchResults from "./components/C-AI/SearchResults";
+import SearchHere from "./components/C-AI/SearchHere";
 
 function App() {
   return (
@@ -26,7 +28,11 @@ function App() {
 
 
       <Route path="/friends" element={<ChatSection />} />
-      <Route path="/cai" element={<ChatWithAI />} />
+      <Route path="/" element={<ChatWithAI />} >
+      <Route path="cai" element={<SearchHere />} />
+      <Route path="/search" element={<SearchResults />} />
+      </Route>
+
 
     </Routes>
   );
