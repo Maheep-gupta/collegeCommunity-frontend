@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import Feed from "./components/Feed";
 import Courses from "./components/courses/courses";
@@ -9,6 +9,8 @@ import Community from "./components/community/Community";
 import CommunityDetail from "./components/community/CommunityDetail";
 
 function App() {
+  const currentPath = useLocation();
+  console.log(currentPath.pathname);
   return (
 
 

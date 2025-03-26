@@ -1,32 +1,72 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import CommunityCard from "./CommunityCard";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import SmallCommuntiyCard from "./SmallCommuntiyCard";
+import communities from '../../utils/communities'
 
-const communities = [
-  { id: 1, name: "Web Development", description: "Discuss frontend & backend technologies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
-  { id: 2, name: "App Development", description: "Share knowledge on mobile app development.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?w=400" },
-  { id: 3, name: "Football", description: "Talk about matches, players, and strategies.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
-  { id: 4, name: "Cricket", description: "Discuss cricket leagues, teams, and tips.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?w=400" },
-  { id: 5, name: "Java", description: "Discuss Java questions, teams, and tips.", image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=400" },
-];
+const filteredOptions = ["Development", "Design", "IT & Software", "Personal Development", "Academics"]
 
 export default function Community() {
+  const [filteredOptionsState, setFilteredOptionsState] = useState("all")
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Join a Community</h1>
-      <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
-        {communities.map((community) => (
-          <div key={community.id} className="bg-white p-4 rounded-lg shadow-md text-center">
-            <img src={community.image} alt={community.name} className="w-full h-40 object-cover rounded-md mb-4" />
-            <h2 className="text-xl font-semibold">{community.name}</h2>
-            <p className="text-gray-600 my-2">{community.description}</p>
-            <Link to={`/community/${community.id}`}>
-              <button className="w-full mt-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700">
-                Join
-              </button>
-            </Link>
+    <section className="p-5 pt-0">
+      <div className='flex justify-between mb-3'>
+        <span className='text-3xl font-mont font-semibold'>Trending Communities</span>
+        <div className='flex gap-2 items-center'>
+          <div title='Back' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
+            <MdNavigateBefore className='h-5 w-5' />
+          </div><div title='Next' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
+            <MdNavigateNext className='h-5 w-5' />
           </div>
+        </div>
+      </div>
+      <div className="flex justify-between overflow-scroll p-5 hide-scrollbar pb-4 gap-6 ">
+        {communities.map((community) =>
+        (
+          <Link to={`/community/${community.id}`}>
+            <CommunityCard key={community.id} {...community} /></Link>
+        )
+        )}
+      </div>
+      <div className='mb-2 mt-10'>
+        <span className='text-3xl font-mont font-semibold '>Communites you may Like</span>
+        <div className='flex justify-between mt-5 items-center'>
+
+          <div className='flex gap-x-2 items-center  '>
+            <span className={`border border-bgBlue capitalize  rounded-full px-3 py-1 text-center ${filteredOptionsState === 'all' ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState('all')}>
+              All
+            </span>
+            {
+              filteredOptions.map((option, index) => {
+
+                return (
+                  <span key={index} className={`border border-bgBlue capitalize  rounded-full px-2 py-1 text-center ${filteredOptionsState === option ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState(option)}>
+                    {option}
+                  </span>
+                )
+              })
+            }
+
+          </div>
+
+          <div>
+            <span className='text-xs font-mont font-semibold text-gray-500'>Sort by:</span>
+            <select name="sorting" id="" className='capitalize outline-none t text-gray-500 font-semibold text-sm font-mont '>
+              <option value="most-recent" className='capitalize'>most recent</option>
+              <option value="most-recent" className='capitalize'>Members: high to low</option>
+              <option value="most-recent" className='capitalize'>members: low to high</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div className="grid grid-cols-4 w-full justify-evenly gap-5">
+        {communities.map((data, index) => (
+          <Link to={`/community/${data.id}`}>
+            <SmallCommuntiyCard key={index} {...data} /></Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
