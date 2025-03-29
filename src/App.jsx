@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import Feed from "./components/Feed";
 import Courses from "./components/courses/courses";
@@ -11,6 +11,8 @@ import SearchResults from "./components/C-AI/SearchResults";
 import SearchHere from "./components/C-AI/SearchHere";
 
 function App() {
+  const currentPath = useLocation();
+  console.log(currentPath.pathname);
   return (
 
 
