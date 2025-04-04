@@ -8,12 +8,10 @@ function MessageAi() {
 
     const handleSearch = () => {
         if (!query.trim()) return;
-        navigate(`/search?q=${query}`); 
+        console.log(`Searching for: ${query}`);
+        
+        navigate(`/search/${query}`); 
     };
-    // if (!query.trim()) return;
-    //     // Redirect user to Google search
-    //     window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-    // };
 
 
     return (

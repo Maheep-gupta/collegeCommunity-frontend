@@ -32,7 +32,7 @@ function App() {
       <Route path="/friends" element={<ChatSection />} />
       <Route path="/" element={<ChatWithAI />} >
       <Route path="cai" element={<SearchHere />} />
-      <Route path="/search" element={<SearchResults />} />
+      <Route path="/search/:id" element={<SearchResults />} />
       </Route>
 
 
