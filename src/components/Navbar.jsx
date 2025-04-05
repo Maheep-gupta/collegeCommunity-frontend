@@ -36,14 +36,14 @@ function Navbar({ isCourses }) {
                 <div className='flex gap-2 pr-10 items-center '>
                     {
                         isCourses ?
-                            <motion.div  className='flex gap-2 items-center'>
-                                <span className='text-sm font-mont font-semibold w-24 hover:cursor-pointer'>My learning</span>
-                                <div title='Favorites' className='hover:cursor-pointer bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
+                            <motion.div  className='flex gap-x-2 items-center '>
+                                <span className='text-sm font-mont hover:bg-gray-200 p-2 pl-3 rounded-md font-semibold w-28 hover:cursor-pointer'>My learning</span>
+                                <div title='Favorites' className='hover:cursor-pointer hover:bg-gray-200 bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
                                     <GoBookmark className='h-5 w-5' />
                                 </div>
                             </motion.div> : null
                     }
-                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={handleNotificationDrawer}>
+                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink hover:bg-gray-200 h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={handleNotificationDrawer}>
 
 
                         {bellState ?
