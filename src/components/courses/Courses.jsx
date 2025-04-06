@@ -37,7 +37,7 @@ function Courses() {
 
 
   return (
-    <div className='pl-5 w-full'>
+    <div className='pl-5 w-full cursor-pointer'>
       {/* Category section */}
       <div>
         <div className='flex justify-between items-center shadow-lg bg-white border rounded-lg  '>
@@ -113,14 +113,14 @@ function Courses() {
           <div className='flex justify-between mt-5 items-center'>
 
             <div className='flex flex-wrap gap-x-2 items-center  '>
-              <span className={`border border-bgBlue capitalize  rounded-full px-3 py-1 text-center ${filteredOptionsState === 'all' ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState('all')}>
+              <span className={`border border-bgBlue capitalize cursor-pointer  rounded-full px-3 py-1 text-center ${filteredOptionsState === 'all' ? 'bg-bgBlue text-white ' : 'hover:bg-gray-200 border-zinc-300'}`} onClick={() => setFilteredOptionsState('all')}>
                 All
               </span>
               {
                 recommendedCategory.map((option, index) => {
 
                   return (
-                    <span key={index} className={`border border-bgBlue capitalize  rounded-full px-2 py-1 text-center ${filteredOptionsState === option.name ? 'bg-bgBlue text-white' : ''}`} onClick={() => setFilteredOptionsState(option.name)}>
+                    <span key={index} className={`border border-bgBlue capitalize cursor-pointer  rounded-full px-2 py-1 text-center ${filteredOptionsState === option.name ? 'bg-bgBlue text-white ' : 'hover:bg-gray-200 border-zinc-300'}`} onClick={() => setFilteredOptionsState(option.name)}>
                       {option.name}
                     </span>
                   )

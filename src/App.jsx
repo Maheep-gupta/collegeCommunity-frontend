@@ -9,6 +9,7 @@ import Community from "./components/community/Community";
 import CommunityDetail from "./components/community/CommunityDetail";
 import SearchResults from "./components/C-AI/SearchResults";
 import SearchHere from "./components/C-AI/SearchHere";
+import CourseDetails from "./components/courses/CourseDetails";
 
 function App() {
   const currentPath = useLocation();
@@ -22,7 +23,9 @@ function App() {
         <Route path="feed" element={<Feed />} />
         <Route path="events" element={<EventsSection />} />
 
-        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses" element={<Courses />} >
+        </Route>
+        <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/community" element={<Community />} />
         <Route path="/community/:id" element={<CommunityDetail />} />
         {/* You can add more routes here */}
@@ -31,8 +34,8 @@ function App() {
 
       <Route path="/friends" element={<ChatSection />} />
       <Route path="/" element={<ChatWithAI />} >
-      <Route path="cai" element={<SearchHere />} />
-      <Route path="/search" element={<SearchResults />} />
+        <Route path="cai" element={<SearchHere />} />
+        <Route path="/search" element={<SearchResults />} />
       </Route>
 
 
