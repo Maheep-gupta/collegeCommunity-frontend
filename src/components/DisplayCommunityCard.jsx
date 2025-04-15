@@ -1,18 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-const DisplayCommunityCard = ({communityName,avatar}) => {
+const DisplayCommunityCard = ({ communityName, avatar }) => {
     return (
-        <>
-            <div className='flex gap-2 items-center'>
-                <div  className='h-6 w-6'>
-                    <img className='h-6 w-g rounded-md' src={avatar} alt="community avatar" />
-                </div>
-                <div className='font-robo font-medium lg:text-sm'>
-                    {communityName}
-                </div>
+        <div className="flex items-center gap-x-3 hover:bg-gray-200 p-2 rounded-lg transition duration-200 cursor-pointer">
+            <div className="h-8 w-8 rounded-md overflow-hidden">
+                <img
+                    src={avatar}
+                    alt={`${communityName} avatar`}
+                    className="h-full w-full object-cover rounded-md"
+                />
             </div>
-        </>
-  )
-}
+            <span className="font-robo text-sm font-medium text-gray-800">
+                {communityName}
+            </span>
+        </div>
+    );
+};
 
-export default DisplayCommunityCard
+export default DisplayCommunityCard;

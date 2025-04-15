@@ -4,7 +4,7 @@ import userData from '../utils/userDetails'
 function UserInfo() {
     return (
         <>
-            <div className="about-user xl:mb-7 lg:mb-3 ">
+            <div className="about-user xl:mb-0 lg:mb-0 ">
                 <div className='bg-white p-3 rounded-xl border-2'>
                     <div className='bg-bgPink rounded-lg p-4 '>
                         <div className="about-user mb-7 ">

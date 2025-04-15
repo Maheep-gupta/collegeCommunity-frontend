@@ -1,5 +1,5 @@
 import React from 'react'
-import Posts from '../FeedPost'
+import Posts from '../Feed/FeedPost'
 function CommunityPosts() {
   return (
     <>

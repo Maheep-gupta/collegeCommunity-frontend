@@ -11,7 +11,7 @@ import data from '../utils/communityData'
 function Navigation() {
     return (
         <>
-            <div className='bg-white p-3 rounded-xl  border-2 font-robo flex flex-col gap-2 mt-5'>
+            <div className='bg-white p-3 rounded-xl  border-2 font-robo max-h-[80%] flex flex-col gap-2 mt-2'>
                 <NavLink
                     to="/feed"
                     className={({ isActive }) => (isActive ? 'bg-bgBlue text-white' : 'text-black hover:bg-gray-200') + ' flex xl:gap-3 lg:gap-1 xl:p-2 lg:p-1 rounded-lg items-center '}
@@ -58,9 +58,9 @@ function Navigation() {
                     <span className='xl:text-md lg:text-sm'>C-Ai</span>
                 </NavLink>
                 <hr />
-                <div>
+                <div className='overflow-y-auto max-h-[50%] hide-scrollbar'>
                     <span className='font-light uppercase xl:text-md lg:text-xs'>Communties You may Like</span>
-                    <div className='flex flex-col gap-3 mt-2'>
+                    <div className='flex flex-col gap-1 mt-2'>
                         {data.map((ele) =>
                             <NavLink to={ele.url}>
 
