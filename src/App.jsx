@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
-import Feed from "./components/Feed";
 import Courses from "./components/courses/courses";
 import EventsSection from "./components/Events/EventsSection";
 import ChatSection from "./components/chat/ChatSection";
@@ -10,6 +9,8 @@ import CommunityDetail from "./components/community/CommunityDetail";
 import SearchResults from "./components/C-AI/SearchResults";
 import SearchHere from "./components/C-AI/SearchHere";
 import CourseDetails from "./components/courses/CourseDetails";
+import ProfilePage from "./components/user/ProfilePage";
+import Feed from "./components/Feed/Feed";
 
 function App() {
   const currentPath = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/community" element={<Community />} />
         <Route path="/community/:id" element={<CommunityDetail />} />
+        <Route path="/profile/:username" element={<ProfilePage />} />
         {/* You can add more routes here */}
       </Route>
 

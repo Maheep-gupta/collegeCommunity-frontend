@@ -1,9 +1,10 @@
 import React from 'react'
 import { IoArrowBack } from 'react-icons/io5'
-import Friend from '../Friend'
+
 import friends from '../../utils/friends'
 import avatar from '../../assets/avatarforFriends.avif'
 import { Link, Outlet, useNavigation } from 'react-router-dom'
+import ChatFriend from './ChatFriends'
 
 
 const ChatSection = () => {
@@ -37,7 +38,7 @@ const ChatSection = () => {
                                 <div className='py-4'>
                                     {friends.map((ele,i) =>
                                         <Link to={`/friends/chat/${i}`} className='py-1 border-b hover:bg-gray-200 hover:shadow-xl flex justify-between rounded-xl items-center pr-2'>
-                                            <Friend friendName={ele.friendsName} avatar={avatar} onlineStatus={true} />
+                                            <ChatFriend friendName={ele.friendsName} avatar={avatar} onlineStatus={true} />
                                         </Link>
                                     )}
 
