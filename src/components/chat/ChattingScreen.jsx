@@ -3,9 +3,11 @@ import ReciverMessage from './ReciverMessage'
 import SenderMessage from './SenderMessage'
 import { IoArrowBack } from 'react-icons/io5'
 import MessageInput from './MessageInput'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import friends from '../../utils/friends'
 
 function ChattingScreen() {
+    const { id} =useParams()
     return (
         <div class="flex flex-col flex-auto h-full p-2">
 
@@ -18,11 +20,11 @@ function ChattingScreen() {
                             class="flex flex-row items-center bg-white rounded-xl p-2"
                         >
                             <div
-                                class="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"
+                                class="flex items-center justify-center h-8 w-8 bg-indigo-200 font-bold rounded-full"
                             >
-                                H
+                                { friends[id].friendsName.charAt(0).toUpperCase()}
                             </div>
-                            <div class="ml-2 text-sm font-semibold">Henry Boyd</div>
+                            <div class="ml-2 text-sm font-semibold capitalize">{ friends[id].friendsName}</div>
                         </div>
                     </div>
 
