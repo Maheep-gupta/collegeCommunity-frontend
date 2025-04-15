@@ -9,6 +9,7 @@ import Community from "./components/community/Community";
 import CommunityDetail from "./components/community/CommunityDetail";
 import SearchResults from "./components/C-AI/SearchResults";
 import SearchHere from "./components/C-AI/SearchHere";
+import ChattingScreen from "./components/chat/ChattingScreen";
 
 function App() {
   const currentPath = useLocation();
@@ -29,10 +30,12 @@ function App() {
       </Route>
 
 
-      <Route path="/friends" element={<ChatSection />} />
+      <Route path="/friends" element={<ChatSection />} >
+        <Route path="/friends/chat/:id" element={<ChattingScreen/>} />
+      </Route>
       <Route path="/" element={<ChatWithAI />} >
-      <Route path="cai" element={<SearchHere />} />
-      <Route path="/search" element={<SearchResults />} />
+        <Route path="cai" element={<SearchHere />} />
+        <Route path="/search/:id" element={<SearchResults />} />
       </Route>
 
 
