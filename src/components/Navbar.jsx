@@ -53,11 +53,18 @@ function Navbar({ isCourses }) {
                             <VscBellDot className='h-5 w-5' /> : <VscBell className='h-5 w-5' />}
 
                     </div>
-                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink hover:bg-gray-200 h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={()=> setQrVisible(true)}>
+                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink hover:bg-gray-200 h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={() => setQrVisible(true)}>
                         <BiQrScan className='h-5 w-5' />
                     </div>
                     {
-                        qrVisible?<QrModal value="https://myprofile.link"  onClose={() => setQrVisible(false)}/>:null
+                        qrVisible ? <QrModal value={{
+                            name: 'Jakob Botosh',
+                            username: '@jakob123',
+                            profileUrl: 'https://res.cloudinary.com/dedumcwij/image/upload/v1727785842/avatar_bgsfao.jpg',
+                            followers: '285',
+                            following: '200',
+                            posts: '80'
+                        }} onClose={() => setQrVisible(false)} /> : null
                     }
 
                 </div>
