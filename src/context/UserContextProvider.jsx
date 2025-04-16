@@ -3,7 +3,7 @@ import userContext from './UserContext'
 
 function UserContextProvider({ children }) {
     const [user, setUser] = useState(null)
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin] = useState(true)
 
     const login = (userData) => {
         setUser(userData);
