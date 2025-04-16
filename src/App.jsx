@@ -14,18 +14,23 @@ import Feed from "./components/Feed/Feed";
 import ChattingScreen from "./components/chat/ChattingScreen";
 import LoginPage from "./auth/Login";
 import SignupPage from "./auth/SignUp";
+import AdminDashboard from "./components/admin/dashboard/mainDashboard";
+import { useContext } from "react";
+import userContext from "./context/UserContext";
+import NotAuthorized from "./components/NotAuthorised";
 
 
 
 
 function App() {
+      const { isAdmin } = useContext(userContext)
   return (
 
 
     <Routes>
       <Route path="/" element={<Navigate to="/feed" />} />
-      <Route path="/login" element={<LoginPage/>} />
-      <Route path="/signup" element={<SignupPage/>} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route path="/" element={<Layout />}>
         <Route path="feed" element={<Feed />} />
         <Route path="events" element={<EventsSection />} />
@@ -49,7 +54,8 @@ function App() {
         <Route path="/search" element={<SearchResults />} />
       </Route>
 
-
+      <Route path="/admin/dashboard" element={isAdmin ? <AdminDashboard />:<Navigate to={'/not-aut'}/>} />
+      <Route path="/not-aut" element={!isAdmin?<NotAuthorized/>:<Navigate to={'/'}/> } />
     </Routes>
   );
 }
