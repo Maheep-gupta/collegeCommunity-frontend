@@ -20,7 +20,7 @@ function UserContextProvider({ children }) {
         setIsAdmin(false);
     };
     return (
-        <userContext.Provider value={{ user, login, logout }}>
+        <userContext.Provider value={{ user, login, logout,isAdmin }}>
             {children}
         </userContext.Provider>
     )
