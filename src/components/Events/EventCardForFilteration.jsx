@@ -9,12 +9,12 @@ function SmallEventCard({ date, month, day, time, title, location, attendees, im
       ></div>
 
           {/*  date card */}
-      <div class="absolute p-2 rounded-lg font-mont bg-white text-center right-6 top-28 ">
-        <div class="text-black text-sm">
+      <div className="absolute p-2 rounded-lg font-mont bg-white text-center right-6 top-28 ">
+        <div className="text-black text-sm">
           {month}
         </div>
-        <div class="">
-          <span class="text-lg font-bold">{date}</span>
+        <div className="">
+          <span className="text-lg font-bold">{date}</span>
         </div>
       </div>
 

@@ -9,12 +9,12 @@ function EventCard({ date, month, day, time, title, location, attendees, image }
       ></div>
 
       {/*  date card */}
-      <div class="absolute p-3 rounded-lg font-mont bg-white text-center right-8 top-40 ">
-        <div class="text-black text-lg">
+      <div className="absolute p-3 rounded-lg font-mont bg-white text-center right-8 top-40 ">
+        <div className="text-black text-lg">
           {month}
         </div>
-        <div class="">
-          <span class="text-3xl font-bold">{date}</span>
+        <div className="">
+          <span className="text-3xl font-bold">{date}</span>
         </div>
       </div>
 
