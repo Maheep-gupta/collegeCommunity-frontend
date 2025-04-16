@@ -51,7 +51,6 @@ const Layout = () => {
             <div className="sticky xl:top-5 lg:top-2 overflow-scroll hide-scrollbar h-screen">
               <div className="scroll">
                 <FriendsSidebar />
-                {/* <EventsLayoutSection /> */}
               </div>
             </div>
           </aside>
