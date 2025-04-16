@@ -5,10 +5,13 @@ import { VscBell, VscBellDot } from 'react-icons/vsc'
 import NotificationDrawer from './notification/NotificationDrawer'
 import { GoBookmark } from 'react-icons/go'
 import { motion } from "motion/react"
+import { BiQrScan } from 'react-icons/bi'
+import QrModal from '../components/QR/QrModal'
 function Navbar({ isCourses }) {
     const path = window.location.pathname;
 
     const [newNotification, setNewNotification] = useState(false)
+    const [qrVisible, setQrVisible] = useState(false)
     const [bellState, setBellState] = useState(false)
 
     const handleNotificationDrawer = () => {
@@ -36,7 +39,7 @@ function Navbar({ isCourses }) {
                 <div className='flex gap-2 pr-10 items-center '>
                     {
                         isCourses ?
-                            <motion.div  className='flex gap-x-2 items-center '>
+                            <motion.div className='flex gap-x-2 items-center '>
                                 <span className='text-sm font-mont hover:bg-gray-200 p-2 pl-3 rounded-md font-semibold w-28 hover:cursor-pointer'>My learning</span>
                                 <div title='Favorites' className='hover:cursor-pointer hover:bg-gray-200 bg-bgPink rounded-lg border-2 h-10 w-10 flex justify-center items-center'>
                                     <GoBookmark className='h-5 w-5' />
@@ -50,7 +53,12 @@ function Navbar({ isCourses }) {
                             <VscBellDot className='h-5 w-5' /> : <VscBell className='h-5 w-5' />}
 
                     </div>
-
+                    <div title='Notifications' className='hover:cursor-pointer bg-bgPink hover:bg-gray-200 h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={()=> setQrVisible(true)}>
+                        <BiQrScan className='h-5 w-5' />
+                    </div>
+                    {
+                        qrVisible?<QrModal value="https://myprofile.link"  onClose={() => setQrVisible(false)}/>:null
+                    }
 
                 </div>
                 <div className=''>

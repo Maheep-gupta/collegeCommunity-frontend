@@ -1,12 +1,13 @@
 import React from 'react'
 import userData from '../utils/userDetails'
+import { Link } from 'react-router-dom'
 
 function UserInfo() {
     return (
         <>
-            <div className="about-user xl:mb-0 lg:mb-0 ">
-                <div className='bg-white p-3 rounded-xl border-2'>
-                    <div className='bg-bgPink rounded-lg p-4 '>
+            <Link to={'/profile/@mido'} className="about-user  xl:mb-0 lg:mb-0 ">
+                <div className='hover:bg-gray-100 hover:border-gray-200 p-3 rounded-xl border-2'>
+                    <div className='rounded-lg p-4 '>
                         <div className="about-user mb-7 ">
                             <div className='flex gap-2 items-center'>
                                 <div className='h-10 w-10 rounded-full'>
@@ -44,7 +45,7 @@ function UserInfo() {
 
                 </div>
 
-            </div>
+            </Link>
 
 
 

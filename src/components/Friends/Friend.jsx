@@ -12,7 +12,7 @@ const Friend = ({ name, status, activityLevel }) => {
   };
 
   return (
-    <div className='flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition-all'>
+    <div className='flex items-center gap-3 cursor-pointer hover:bg-gray-200 p-2 rounded-md transition-all'>
       <div className='relative'>
         <img
           src={avatar}
