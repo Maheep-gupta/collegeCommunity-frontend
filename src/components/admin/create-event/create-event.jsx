@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { FaMapPin, FaImage, FaUpload, FaUsers, FaTicketAlt, FaInfoCircle, FaGlobe, FaDollarSign, FaChevronRight, FaCalendarAlt, FaCheck, FaPlus, FaSave, FaLock, FaRegSave } from 'react-icons/fa';
-import { format } from 'date-fns'; // For formatting dates
+import { FaImage, FaTicketAlt, FaGlobe, FaCheck, FaLock, FaRegSave } from 'react-icons/fa';// For formatting dates
 import { IoIosArrowForward } from "react-icons/io";
-import { CiLocationOn } from "react-icons/ci";
-import Basicinformation from "./Basicinformation";
+import Basicinformation from "./BasicInformation";
 
 export default function CreateEventPage() {
     const [activeStep, setActiveStep] = useState(0);
