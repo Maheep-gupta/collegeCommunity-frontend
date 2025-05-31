@@ -1,4 +1,6 @@
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 import Layout from "./components/Layout";
 import Courses from "./components/courses/courses";
 import EventsSection from "./components/Events/EventsSection";
@@ -15,47 +17,80 @@ import ChattingScreen from "./components/chat/ChattingScreen";
 import LoginPage from "./auth/Login";
 import SignupPage from "./auth/SignUp";
 import AdminDashboard from "./components/admin/dashboard/mainDashboard";
-import { useContext } from "react";
-import userContext from "./context/UserContext";
 import NotAuthorized from "./components/NotAuthorised";
+import EventPage from "./components/Events/EventDetails";
+import CreateEventPage from "./components/admin/create-event/create-event";
 
-
-
+import userContext from "./context/UserContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
-      const { isAdmin } = useContext(userContext)
+  const { user, isAdmin } = useContext(userContext);
+
   return (
-
-
     <Routes>
+      {/* Redirect root to feed */}
       <Route path="/" element={<Navigate to="/feed" />} />
+
+      {/* Public routes */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/" element={<Layout />}>
+
+      {/* Routes that require user login */}
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute isAllowed={!!user} redirectPath="/login">
+            <Layout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="feed" element={<Feed />} />
         <Route path="events" element={<EventsSection />} />
-
-        <Route path="/courses" element={<Courses />} >
-        </Route>
-        <Route path="/courses/:courseId" element={<CourseDetails />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/community/:id" element={<CommunityDetail />} />
-        <Route path="/profile/:username" element={<ProfilePage />} />
-        {/* You can add more routes here */}
+        <Route path="events/:id" element={<EventPage />} />
+        <Route path="courses" element={<Courses />} />
+        <Route path="courses/:courseId" element={<CourseDetails />} />
+        <Route path="community" element={<Community />} />
+        <Route path="community/:id" element={<CommunityDetail />} />
+        <Route path="profile/:username" element={<ProfilePage />} />
       </Route>
 
-
-      <Route path="/friends" element={<ChatSection />} >
-        <Route path="/friends/chat/:id" element={<ChattingScreen />} />
+      <Route
+        path="/friends"
+        element={
+          <ProtectedRoute isAllowed={!!user} redirectPath="/login">
+            <ChatSection />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="chat/:id" element={<ChattingScreen />} />
       </Route>
 
-      <Route path="/" element={<ChatWithAI />} >
+      <Route path="/" element={<ChatWithAI />}>
         <Route path="cai" element={<SearchHere />} />
-        <Route path="/search" element={<SearchResults />} />
+        <Route path="search" element={<SearchResults />} />
       </Route>
 
-      <Route path="/admin/dashboard" element={isAdmin ? <AdminDashboard />:<Navigate to={'/not-aut'}/>} />
-      <Route path="/not-aut" element={!isAdmin?<NotAuthorized/>:<Navigate to={'/'}/> } />
+      {/* Admin-only routes */}
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute isAllowed={isAdmin} redirectPath="/not-aut">
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/create-event"
+        element={
+          <ProtectedRoute isAllowed={isAdmin} redirectPath="/not-aut">
+            <CreateEventPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Not authorized page */}
+      <Route path="/not-aut" element={<NotAuthorized />} />
     </Routes>
   );
 }
