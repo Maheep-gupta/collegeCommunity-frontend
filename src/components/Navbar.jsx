@@ -8,6 +8,7 @@ import { motion } from "motion/react"
 import { BiQrScan } from 'react-icons/bi'
 import QrModal from '../components/QR/QrModal'
 import userContext from '../context/UserContext'
+import { Link } from 'react-router-dom'
 function Navbar({ isCourses }) {
     const { isAdmin } = useContext(userContext)
     const path = window.location.pathname;
@@ -65,14 +66,14 @@ function Navbar({ isCourses }) {
                     }
                     {
                         isFeed && isAdmin ?
-                            <div className='w-52 '>
-                                <button
+                            <div className='w-44 '>
+                                <Link to={'/admin/dashboard'}
                                     className="middle flex gap-x-2 items-center none center mr-4 rounded-lg bg-bgBlue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                     type="button"
                                 >
                                     {/* <IoAdd size={20} /> */}
                                     <span className='font-pop'>View Dashboard</span>
-                                </button>
+                                </Link>
                             </div> : null
                     }
                     <div title='Notifications' className='hover:cursor-pointer bg-bgPink hover:bg-gray-200 h-10 w-10 rounded-lg border-2 flex justify-center items-center' onClick={handleNotificationDrawer}>

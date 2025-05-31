@@ -1,29 +1,40 @@
-import React, { useState } from 'react'
-import userContext from './UserContext'
+import React, { useState, useEffect } from 'react';
+import userContext from './UserContext';
 
 function UserContextProvider({ children }) {
-    const [user, setUser] = useState(null)
-    const [isAdmin, setIsAdmin] = useState(true)
+    const [user, setUser] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const login = (userData) => {
-        setUser(userData);
-        //  store token in localStorage
-        localStorage.setItem('user', JSON.stringify(userData));
+        setUser(userData.user);
+        localStorage.setItem('user', JSON.stringify(userData.user));
+        localStorage.setItem('token', userData.token); // token is already a string
 
-        // logic to set is admin based on userData
+        setIsAdmin(userData.user.isAdmin === true);
     };
-    
 
     const logout = () => {
         setUser(null);
-        localStorage.removeItem('user');
         setIsAdmin(false);
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
     };
+
+    // Optional: Auto-login from localStorage on refresh
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const parsedUser = JSON.parse(storedUser);
+            setUser(parsedUser);
+            setIsAdmin(parsedUser.isAdmin === true);
+        }
+    }, []);
+
     return (
-        <userContext.Provider value={{ user, login, logout,isAdmin }}>
+        <userContext.Provider value={{ user, isAdmin, login, logout }}>
             {children}
         </userContext.Provider>
-    )
+    );
 }
 
-export default UserContextProvider
+export default UserContextProvider;

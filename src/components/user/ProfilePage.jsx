@@ -3,7 +3,7 @@ import Education from './Education';
 import Skills from './Skills';
 import Jobs from './Jobs';
 import ProfileFeed from './ProfileFeed';
-
+import userData from '../../utils/userDetails';
 const tabs = ["Feed", "Education", "Skills", "Job Openings"];
 
 const ProfilePage = () => {
@@ -14,11 +14,11 @@ const ProfilePage = () => {
             {/* Profile Header */}
             <div className="text-center">
                 <img
-                    src="https://i.pravatar.cc/100"
+                    src={userData.profileUrl}
                     alt="Profile"
                     className="w-24 h-24 rounded-full mx-auto"
                 />
-                <h1 className="text-2xl font-semibold mt-2">Emma Johnson</h1>
+                <h1 className="text-2xl font-semibold mt-2">{ userData.name}</h1>
                 <p className="text-gray-600">Software engineer. Passionate about technology and coding.</p>
                 <p className="text-sm text-gray-500">San Francisco, CA</p>
 
@@ -29,13 +29,13 @@ const ProfilePage = () => {
 
                 <div className="flex justify-center gap-6 mt-4 text-sm">
                     <div>
-                        <span className="font-semibold">125</span><br />Posts
+                        <span className="font-semibold">{ userData.posts}</span><br />Posts
                     </div>
                     <div>
-                        <span className="font-semibold">5,200</span><br />Followers
+                        <span className="font-semibold">{ userData.followers}</span><br />Followers
                     </div>
                     <div>
-                        <span className="font-semibold">480</span><br />Following
+                        <span className="font-semibold">{userData.following}</span><br />Following
                     </div>
                 </div>
             </div>

@@ -1,14 +1,41 @@
 import React, { useContext, useState } from "react";
 import logo from './../assets/cc-logo.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import userContext from "../context/UserContext";
+import { toast } from 'react-hot-toast';
+import axios from "axios";
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
-    const { user, login, logout } = useContext(userContext);
-    console.log(user);
-    
+    const [formData, setFormData] = useState({ rollNumber: "", password: "" });
+    const { login } = useContext(userContext);
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const loadingToast = toast.loading("Logging in...");
+        try {
+
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/auth/login`, {
+                rollNumber: formData.rollNumber,
+                password: formData.password
+            });
+            console.log("Login response:", res.data); // Debugging line
+
+            login(res.data); // Store user context
+            toast.success("Login successful!", { id: loadingToast });
+            navigate("/feed");
+        } catch (err) {
+            const msg = err.response?.data?.message || "Login failed";
+            toast.error(msg, { id: loadingToast });
+        }
+    };
 
     return (
         <div className="min-h-screen flex flex-col bg-white relative">
@@ -27,6 +54,7 @@ export default function LoginPage() {
                 <div className="absolute bottom-20 left-1/4 bg-gray-500 opacity-30 w-64 h-64 rounded-full blur-xl"></div>
             </div>
 
+            {/* Header */}
             <div className='flex h-20 w-full bg-white p-5 shadow-md z-50'>
                 <div className='flex w-full'>
                     <div className='flex gap-x-1 justify-center items-center'>
@@ -36,6 +64,7 @@ export default function LoginPage() {
                 </div>
             </div>
 
+            {/* Login Form */}
             <div className="flex flex-1 w-full justify-center items-center z-50">
                 <div className="flex w-full md:w-1/2 justify-center items-center p-6">
                     <div className="bg-gradient-to-b from-[#1B79E5] to-[#6c92c0] p-10 rounded-2xl shadow-2xl w-full max-w-md">
@@ -43,9 +72,9 @@ export default function LoginPage() {
                             Welcome Back!
                         </h2>
                         <p className="text-center text-white mb-8">Login to connect with your friends and the world around you.</p>
-                        <form className="space-y-3">
+                        <form onSubmit={handleSubmit} className="space-y-3">
                             <div>
-                                <label htmlFor="username" className="block text-sm font-medium text-white">
+                                <label htmlFor="rollNumber" className="block text-sm font-medium text-white">
                                     Username or User ID
                                 </label>
                                 <div className="relative">
@@ -54,7 +83,10 @@ export default function LoginPage() {
                                     </span>
                                     <input
                                         type="text"
-                                        id="username"
+                                        id="rollNumber"
+                                        name="rollNumber"
+                                        value={formData.rollNumber}
+                                        onChange={handleChange}
                                         className="mt-1 pl-10 outline-none block w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:ring-white focus:border-white"
                                         placeholder="21038201000"
                                     />
@@ -72,6 +104,9 @@ export default function LoginPage() {
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         id="password"
+                                        name="password"
+                                        value={formData.password}
+                                        onChange={handleChange}
                                         className="mt-1 pl-10 pr-10 outline-none block w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:ring-white focus:border-white"
                                         placeholder="Enter your password"
                                     />
@@ -84,14 +119,12 @@ export default function LoginPage() {
                                 </div>
                             </div>
 
-                            <Link to="/feed">
-                                <button
-                                    type="submit"
-                                    className="w-full mt-5 bg-white text-[#1B79E5] hover:bg-blue-400 hover:text-white p-3 rounded-xl shadow  transition duration-200 text-lg font-semibold"
-                                >
-                                    Log In
-                                </button>
-                            </Link>
+                            <button
+                                type="submit"
+                                className="w-full mt-5 bg-white text-[#1B79E5] hover:bg-blue-400 hover:text-white p-3 rounded-xl shadow transition duration-200 text-lg font-semibold"
+                            >
+                                Log In
+                            </button>
                         </form>
                         <p className="mt-3 text-center text-sm text-white">
                             Don’t have an account? <Link to='/signup' className="text-white font-medium underline">Sign up</Link>

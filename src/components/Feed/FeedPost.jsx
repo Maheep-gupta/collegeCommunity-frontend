@@ -7,6 +7,7 @@ import Comment from './Comment'
 
 function FeedPost({ post }) {
   const [showHeart, setShowHeart] = useState(false)
+  const [addLike, setAddLike] = useState(false)
   const [showComments, setShowComments] = useState(false)
   const [replyInputVisible, setReplyInputVisible] = useState({})
   const [replies, setReplies] = useState({})
@@ -18,6 +19,7 @@ function FeedPost({ post }) {
     if (now - lastTap.current < 300) {
       setShowHeart(true)
       setTimeout(() => setShowHeart(false), 700)
+      setAddLike(prev => !prev)
     }
     lastTap.current = now
   }
@@ -103,7 +105,7 @@ function FeedPost({ post }) {
 
         {/* Like / Comment / Share */}
         <div className="flex justify-around border-t border-gray-200 px-4 py-2 text-gray-600 text-sm font-semibold">
-          <button className="flex items-center gap-1 hover:text-red-600">
+          <button className={`flex items-center gap-1 hover:text-red-600 ${addLike ? 'text-red-600' : ''}`} onClick={() => setAddLike(!addLike)}>
             <AiFillHeart className="text-lg" /> <span>Like</span>
           </button>
           <button
