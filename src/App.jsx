@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Layout from "./components/Layout";
-import Courses from "./components/courses/courses";
+import Courses from "./components/courses/Courses";
 import EventsSection from "./components/Events/EventsSection";
 import ChatSection from "./components/chat/ChatSection";
 import ChatWithAI from "./components/C-AI/ChatWithAI";
