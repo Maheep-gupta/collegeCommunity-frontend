@@ -40,9 +40,7 @@ function App() {
       <Route
         path="/"
         element={
-          <ProtectedRoute isAllowed={!!user} redirectPath="/login">
-            <Layout />
-          </ProtectedRoute>
+          <Layout />
         }
       >
         <Route path="feed" element={<Feed />} />
